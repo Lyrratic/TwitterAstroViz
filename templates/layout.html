@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='twitterAstro.css') }}">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Javascript -->
+    <script src="{{ url_for('static', filename='twitterAstro.js') }}"></script>
+
+    <title>Human Spaceflight X Social Media{% block title %}{% endblock %}</title>
+    {% endblock %}
+  </head>
+  <body class="gradient" onload={% block onload %}{% endblock %}>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+      <ul class="horizontal-list navigation">
+        <li id="explore"><a href="{{ url_for('home') }}">Explore</a></li>
+        <li id="about"><a href="{{ url_for('home') }}">About</a></li>
+        <li id="stats"><a href="{{ url_for('stats') }}">Stats</a></li>
+        <li id="orgs"><a href="{{ url_for('organizations_interactions') }}">Interactions by Organizations</a></li>
+        <li id="individuals"><a href="{{ url_for('individuals_interactions') }}">Interactions by Individuals</a></li>
+        <li id="hashtags"><a href="{{ url_for('hashtags') }}">Hashtags</a></li>
+        <li id="maps"><a href="{{ url_for('maps') }}">Maps</a></li>
+      </ul>
+      {% block footer %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

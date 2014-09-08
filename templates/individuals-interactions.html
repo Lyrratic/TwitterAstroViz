@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %} - Interactions by Individuals{% endblock %}{% block head %}
+  {{ super() }}
+    <script type="text/javascript" src="http://mbostock.github.io/d3/talk/20111116/d3/d3.js"></script>
+    <script type="text/javascript" src="http://mbostock.github.io/d3/talk/20111116/d3/d3.layout.js"></script>
+    <script type="text/javascript" src="http://mbostock.github.io/d3/talk/20111116/packages.js"></script>
+{% endblock %}
+{% block onload %}individualsInit(){% endblock %}
+{% block content %}
+	<!-- <div id="loading">Loading...</div> -->
+	<div class="title">
+	<h1 class="title-line-top">Interactions</h1>
+	<h1 class="title-line-bottom"><span class="X"> X </span>Individuals</h1>
+
+	<h2 >replies and retweets, friendships by flare chord.</h2>
+	</div>
+
+	<div class="main-viz">
+		<ul class="graph-options">
+	        <li id="following">Following</li>
+	        <li id="replies-and-retweets" class="selected">Replies + Retweets</li>
+	    </ul>
+	</div>
+
+{% endblock %}

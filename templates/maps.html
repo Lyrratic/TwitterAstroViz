@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %} - Maps{% endblock %}
+{% block head %}
+  {{ super() }}
+  	<!-- load D3js -->
+	<script src="http://www.d3plus.org/js/d3.js"></script>
+	<!-- load topojson library -->
+	<script src="http://www.d3plus.org/js/topojson.js"></script>
+	<!-- load D3plus after D3js -->
+	<script src="http://www.d3plus.org/js/d3plus.js"></script>
+{% endblock %}
+{% block onload %}mapInit(){% endblock %}
+{% block content %}
+	<!-- <div id="loading">Loading...</div> -->
+	<div class="title">
+	<h1 class="title-line-top">Maps</h1>
+	<h1 class="title-line-bottom"><span class="X"> X </span>Account/Org</h1>
+
+	<h2 >maps of followers.</h2>
+	</div>
+
+		<ul class="graph-options">
+	        <li id="following">ESA</li>
+	        <li id="replies">NASA</li>
+	        <li id="retweets">CSA</li>
+	        <li id="retweets">JAXA</li>
+	        <li id="replies-and-retweets" class="selected">Roscosmos</li>
+    	</ul>
+
+	<div class="main-viz" id="map">
+	</div>
+{% endblock %}

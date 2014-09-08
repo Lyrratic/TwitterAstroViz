@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block title %} - Hashtags{% endblock %}
+{% block head %}
+  {{ super() }}
+ 	<script src="http://d3js.org/d3.v3.min.js"></script>
+
+  <!-- data -->
+	<script src="static/hashtag-data/CSA_hashtags.js"></script>
+	<script src="static/hashtag-data/NASA_hashtags.js"></script>
+	<script src="static/hashtag-data/ESA_hashtags.js"></script>
+	<script src="static/hashtag-data/JAXA_hashtags.js"></script>
+	<script src="static/hashtag-data/Roscosmos_hashtags.js"></script>
+{% endblock %}
+{% block onload %}hashtagsInit(){% endblock %}
+{% block content %}
+	<!-- <div id="loading">Loading...</div> -->
+	<div class="title">
+	<h1 class="title-line-top">Hashtags</h1>
+	<h1 class="title-line-bottom"><span class="X"> X </span>Organization</h1>
+
+	<h2 >word bubble hashtags.</h2>
+	</div>
+
+	<div class="main-viz">
+		<ul class="graph-options">
+	        <li id="following">ESA</li>
+	        <li id="replies">NASA</li>
+	        <li id="retweets">CSA</li>
+	        <li id="retweets">JAXA</li>
+	        <li id="replies-and-retweets" class="selected">Roscosmos</li>
+    	</ul>
+	</div>
+{% endblock %}

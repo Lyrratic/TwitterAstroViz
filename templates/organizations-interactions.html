@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %} - Interactions by Organizations{% endblock %}
+{% block head %}
+  {{ super() }}
+  	<!-- Chord1 dependencies -->
+    <script src="{{ url_for('static', filename='lib/underscore.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/mapper.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/d3.js') }}"></script>
+
+{% endblock %}
+{% block onload %}organizationsInit(){% endblock %}
+<!-- {% block class %}chord{% endblock %} -->
+{% block content %}
+	<!-- <div id="loading">Loading...</div> -->
+	<div class="title">
+	<h1 class="title-line-top">Interactions</h1>
+	<h1 class="title-line-bottom"><span class="X"> X </span>Organizations</h1>
+
+	<h2 >replies and retweets, friendships by big chord.</h2>
+	</div>
+
+	<div class="main-viz">
+	<ul class="graph-options">
+        <li id="following">Following</li>
+        <li id="replies">Replies</li>
+        <li id="retweets">Retweets</li>
+        <li id="replies-and-retweets" class="selected">Replies + Retweets</li>
+    </ul>
+	<div id="tooltip"></div>
+	</div>
+
+{% endblock %}
